@@ -1,4 +1,5 @@
 using Godot;
+using LearnGodot.core.@event;
 using LearnGodot.core.resources.scripts;
 using LearnGodot.Event;
 
@@ -9,6 +10,9 @@ public partial class HealthComponent : Node
 {
 	[Export] public EntityStats EntityStats;
 
+	/// <summary>
+	/// Get if the attached entity is dead.
+	/// </summary>
 	public bool IsDead { get; private set; }
 
 	private int _health;
@@ -20,11 +24,10 @@ public partial class HealthComponent : Node
 		_maxHealth = EntityStats.MaxHealth;
 	}
 
-	public override void _Process(double delta)
-	{
-		
-	}
-
+	/// <summary>
+	/// Damage the attached entity.
+	/// </summary>
+	/// <param name="amount">Amount of damage.</param>
 	public void TakeDamage(int amount)
 	{
 		_health -= amount;
@@ -38,6 +41,10 @@ public partial class HealthComponent : Node
 		}
 	}
 
+	/// <summary>
+	/// Heal the attached entity.
+	/// </summary>
+	/// <param name="amount">Amount of Health to restore.</param>
 	public void Heal(int amount)
 	{
 		if (_health >= _maxHealth) return;
@@ -47,6 +54,9 @@ public partial class HealthComponent : Node
 		EventBus.Publish(new PlayerEvents.PlayerHealEvent(amount));
 	}
 
+	/// <summary>
+	/// Publish the PlayerDeathEvent().
+	/// </summary>
 	public void Death()
 	{
 		EventBus.Publish(new PlayerEvents.PlayerDeathEvent());

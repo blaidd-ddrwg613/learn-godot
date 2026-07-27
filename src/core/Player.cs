@@ -1,5 +1,6 @@
 using Godot;
 using LearnGodot.core.Components;
+using LearnGodot.core.@event;
 using LearnGodot.Event;
 using EntityStats = LearnGodot.core.resources.scripts.EntityStats;
 using Logger = LearnGodot.util.Logger;
@@ -11,7 +12,7 @@ public partial class Player : CharacterBody2D
 	[Export] public EntityStats EntityStats;
 	[Export] public HealthComponent HealthComponent;
 	[Export] public InputComponent InputComponent;
-	[Export] public MovementComponent MovementComponent;
+	[Export] public PlayerMovementComponent PlayerMovementComponent;
 
 	public override void _Ready()
 	{
@@ -26,11 +27,11 @@ public partial class Player : CharacterBody2D
 	{
 		base._PhysicsProcess(delta);
 
-		MovementComponent.MovementDir = InputComponent.MoveDir;
-		MovementComponent.IsSprinting = InputComponent.IsSprinting;
+		PlayerMovementComponent.MovementDir = InputComponent.MoveDir;
+		PlayerMovementComponent.IsSprinting = InputComponent.IsSprinting;
 
 		InputComponent.Update();
-		MovementComponent.Update(delta);
+		PlayerMovementComponent.Update(delta);
 	}
 
 	public override void _Process(double delta)
@@ -60,6 +61,8 @@ public partial class Player : CharacterBody2D
 	{
 		base._ExitTree();
 		
+		// Ensure to unsubscribe to events is the scene is deleted.
+		// TODO Must be a better way Handle these events
 		EventBus.Unsubscribe<PlayerEvents.PlayerDamageEvent>(OnPlayerDamage);
 		EventBus.Unsubscribe<PlayerEvents.PlayerHealEvent>(OnPlayerHeal);
 		EventBus.Unsubscribe<PlayerEvents.PlayerDeathEvent>(OnPlayerDeath);

@@ -1,14 +1,6 @@
-res://src/util/Logger.cs
 res://src/core/Player.cs
-res://src/scenes/player.tscn
-res://src/scenes/levels/test_level.tscn
-res://src/Event/EventBus.cs
-res://src/event/EventBus.cs
-res://src/Event/TestEvents.cs
-res://src/event/TestEvents.cs
-res://src/resources/scripts/PlayerStats.cs
-res://src/resources/PlayerStats.tres
+res://src/core/Components/MovementComponent.cs
+res://src/core/Components/InputComponent.cs
 res://src/core/Components/HealthComponent.cs
 res://src/core/resources/scripts/EntityStats.cs
-res://src/core/Components/InputComponent.cs
-res://src/core/Components/MovementComponent.cs
+res://src/core/resources/scripts/EnemyResource.cs
