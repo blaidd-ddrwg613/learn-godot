@@ -1,0 +1,6 @@
+MovementComponent
+InputComponent
+HealthComponent
+Sprite2D
+CollisionShape2D
+CharacterBody2D

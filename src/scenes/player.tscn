@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dlgrywc3koab6"]
+
+[ext_resource type="Texture2D" uid="uid://c55ltwfv3fstv" path="res://assets/spritesheets/spritesheet-characters-default.png" id="1_cusn3"]
+[ext_resource type="Script" uid="uid://p4ue6xspf4is" path="res://src/core/Player.cs" id="1_v4rts"]
+[ext_resource type="Resource" uid="uid://bmfils1amd0nk" path="res://src/core/resources/PlayerStats.tres" id="2_hwyk6"]
+[ext_resource type="Script" uid="uid://rji7qsgx8vse" path="res://src/core/Components/HealthComponent.cs" id="4_l2v1k"]
+[ext_resource type="Script" uid="uid://sk6op273twkk" path="res://src/core/Components/InputComponent.cs" id="5_0qy4j"]
+[ext_resource type="Script" uid="uid://ddrtkjbeq4n68" path="res://src/core/Components/MovementComponent.cs" id="6_8v6aa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yeiif"]
+radius = 27.0
+height = 90.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1026233062 node_paths=PackedStringArray("HealthComponent", "InputComponent", "MovementComponent")]
+script = ExtResource("1_v4rts")
+EntityStats = ExtResource("2_hwyk6")
+HealthComponent = NodePath("HealthComponent")
+InputComponent = NodePath("InputComponent")
+MovementComponent = NodePath("MovementComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=96610151]
+texture = ExtResource("1_cusn3")
+hframes = 7
+vframes = 7
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1130070652]
+position = Vector2(0, 12)
+shape = SubResource("CapsuleShape2D_yeiif")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1224485119]
+script = ExtResource("4_l2v1k")
+EntityStats = ExtResource("2_hwyk6")
+metadata/_custom_type_script = "uid://rji7qsgx8vse"
+
+[node name="InputComponent" type="Node" parent="." unique_id=1702348140]
+script = ExtResource("5_0qy4j")
+PlayerStats = ExtResource("2_hwyk6")
+metadata/_custom_type_script = "uid://sk6op273twkk"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1378414727 node_paths=PackedStringArray("Body")]
+script = ExtResource("6_8v6aa")
+Body = NodePath("..")
+PlayerStats = ExtResource("2_hwyk6")
+metadata/_custom_type_script = "uid://ddrtkjbeq4n68"

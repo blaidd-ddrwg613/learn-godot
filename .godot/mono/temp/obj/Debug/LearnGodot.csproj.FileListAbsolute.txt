@@ -1,0 +1,17 @@
+C:\Code\learn-godot\.godot\mono\temp\bin\Debug\LearnGodot.deps.json
+C:\Code\learn-godot\.godot\mono\temp\bin\Debug\LearnGodot.runtimeconfig.json
+C:\Code\learn-godot\.godot\mono\temp\bin\Debug\LearnGodot.dll
+C:\Code\learn-godot\.godot\mono\temp\bin\Debug\LearnGodot.pdb
+C:\Code\learn-godot\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Code\learn-godot\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.csproj.AssemblyReference.cache
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.AssemblyInfoInputs.cache
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.AssemblyInfo.cs
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.csproj.CoreCompileInputs.cache
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.csproj.Up2Date
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.dll
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\refint\LearnGodot.dll
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.pdb
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\LearnGodot.genruntimeconfig.cache
+C:\Code\learn-godot\.godot\mono\temp\obj\Debug\ref\LearnGodot.dll
